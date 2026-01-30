@@ -1,5 +1,5 @@
-alter table server_logs add column Session_Dur
-update server_logs set Session_Dur=24*60*(julianday(Session_End)-julianday(Session_Start))
+alter table server_logs add column Session_Dur;
+update server_logs set Session_Dur=24*60*(julianday(Session_End)-julianday(Session_Start));
 
 create view v_users_activity as
 select users.User_ID as User_ID, users.First_Name as First_Name, users.Last_Name as Last_Name, count(Log_ID) as Num_Sessions,sum(Session_Dur) as Total_Session_Time from users 
