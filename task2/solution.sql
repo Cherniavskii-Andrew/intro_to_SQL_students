@@ -1,2 +1,2 @@
 create view v_region_sales_summary as
-select region as Region, sum(Quantity_Sold) as Sales_Count,  sum((Unit_Price*Quantity_Sold)*(1-Discount)) as Total_Revenue from data group by Region order by Total_Revenue desc
+select region as Region, sum(Quantity_Sold) as Sales_Count,  sum((Unit_Price*Quantity_Sold)*(1-Discount)) as Total_Revenue from sales group by Region order by Total_Revenue desc
